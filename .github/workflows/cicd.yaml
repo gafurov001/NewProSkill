@@ -2,7 +2,7 @@ name: ProSkill
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   deploy:
