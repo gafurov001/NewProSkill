@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/NewProSkill
+            cd /var/www/faxriddin_back/NewProSkill
             git pull 
             systemctl restart new_pro_skill.service
 
