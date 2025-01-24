@@ -47,4 +47,5 @@ class Configuration:
     AUTH_TOKEN: str = os.getenv('AUTH_TOKEN')
 
 
+
 conf = Configuration()
