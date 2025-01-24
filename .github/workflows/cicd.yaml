@@ -17,6 +17,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/faxriddin_back/NewProSkill
-            git pull 
-            systemctl restart new_pro_skill.service
+            git pull
 
