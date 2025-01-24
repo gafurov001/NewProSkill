@@ -38,6 +38,7 @@ class DatabaseConfig(BaseConfig):
         return f"postgresql+asyncpg://{self.USER}:{self.PASS}@{self.HOST}:{self.PORT}/{self.NAME}"
 
 
+
 @dataclass
 class Configuration:
     """All in one configuration's class"""
