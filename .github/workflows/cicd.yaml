@@ -1,4 +1,4 @@
-name: School
+name: ProSkill
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: executing remote ssh commands using ssh-key
         uses: appleboy/ssh-action@v0.1.10
