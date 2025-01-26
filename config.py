@@ -39,6 +39,7 @@ class DatabaseConfig(BaseConfig):
 
 
 
+
 @dataclass
 class Configuration:
     """All in one configuration's class"""

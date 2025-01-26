@@ -16,6 +16,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/faxriddin_back/NewProSkill
+            cd /var/www/NewProSkill
             git pull
 
