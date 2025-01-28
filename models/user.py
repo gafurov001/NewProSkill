@@ -5,10 +5,9 @@ from models import BaseModel
 
 
 class User(BaseModel):
-    first_name: Mapped[str] = mapped_column(String(50))
-    last_name: Mapped[str] = mapped_column(String(50))
+    full_name: Mapped[str] = mapped_column(String(100))
     username: Mapped[str] = mapped_column(String(50))
-    email: Mapped[str] = mapped_column(String(100))
     password: Mapped[str] = mapped_column(Text)
+    phone_number: Mapped[str] = mapped_column(String(20))
 
 

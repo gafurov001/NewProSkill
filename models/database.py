@@ -10,7 +10,6 @@ from config import conf
 
 
 class Base(AsyncAttrs, DeclarativeBase):
-
     @declared_attr
     def __tablename__(self) -> str:
         __name = self.__name__[:1]
@@ -87,6 +86,18 @@ class AbstractClass:
         await cls.commit()
 
     @classmethod
+    async def update_by_phone(cls, phone_number, **kwargs):
+        query = (
+            sqlalchemy_update(cls)
+            .where(cls.phone_number == phone_number)
+            .values(**kwargs)
+            .execution_options(synchronize_session="fetch")
+        )
+        await db.execute(query)
+        await cls.commit()
+
+
+    @classmethod
     async def get(cls, criteria, *, relationship=None):
         query = select(cls).where(criteria)
         if relationship:
@@ -147,5 +158,5 @@ class BaseModel(Base, AbstractClass):
 
 class CreatedBaseModel(BaseModel):
     __abstract__ = True
-    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(), onupdate=datetime.now())
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now())

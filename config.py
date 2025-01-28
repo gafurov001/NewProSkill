@@ -45,8 +45,7 @@ class Configuration:
     """All in one configuration's class"""
     db = DatabaseConfig()
     # smtp = SmtpConfig()
-    ACCOUNT_SID: str = os.getenv('ACCOUNT_SID')
-    AUTH_TOKEN: str = os.getenv('AUTH_TOKEN')
+    SECRET_KET: str = os.getenv('SECRET_KET')
 
 
 
